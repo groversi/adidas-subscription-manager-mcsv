@@ -6,7 +6,9 @@ services:
     restart: always
     build:
       context: ./
-    image: subscription:latest
+    image: adidas-subscription-management:latest
+    volumes:
+      - ./src/main/resources/certs/:/certs/
     ports:
       - "8080:8080"
     expose:

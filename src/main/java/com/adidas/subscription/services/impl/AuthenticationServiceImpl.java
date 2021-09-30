@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -50,7 +51,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     private PublicKey retrievePublicKey(){
         try{
-            File file = new ClassPathResource("certs/public.pem").getFile();
+            InputStream file = new ClassPathResource("certs/public.pem").getInputStream();
             String publicKeyString = new Scanner(file, StandardCharsets.UTF_8.name()).useDelimiter("\\A").next().replaceAll(regexKeys, "");
             X509EncodedKeySpec keySpec = new X509EncodedKeySpec(Base64.getDecoder().decode(publicKeyString));
             return KeyFactory.getInstance(encryptStrategy).generatePublic(keySpec);
