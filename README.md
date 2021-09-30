@@ -1,0 +1,1 @@
+# adidas-subscription-manager-mcsv
