@@ -31,7 +31,7 @@ For more details, see the swagger doåcumentation. (On the repo is also included
 #Dependencies
 This project needs other projects do work properly. Please download and run the other projects:
 - adidas-backend-for-frontend-mcsv - [See project](https://github.com/groversi/adidas-backend-for-frontend-mcsv)
-- adidas-email-server-mcsv
+- adidas-email-server-mcsv - [See project](https://github.com/groversi/adidas-email-server-mcsv)
 
 For more doubts, reade README section of these projects.
  
