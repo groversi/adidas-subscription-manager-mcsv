@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: "adidas-subscription-manager-mcsv"
-          image: "<ContainerRegister>.azurecr.io/adidas-subscription-manager-mcsv"
+          image: "<YourContainerRegister>.azurecr.io/adidas-subscription-manager-mcsv"
           ports:
             - containerPort: 8080
