@@ -8,6 +8,7 @@ import com.adidas.subscription.repositories.SubscriptionRepository;
 import com.adidas.subscription.services.SubscriptionService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     private EmailIntegration emailIntegration;
 
     @Override
+    @CacheEvict(value = "subscription", allEntries = true)
     public Subscription createSubscription(Subscription subscription) {
         log.info("Creating subscription on database");
         if(subscriptionRepository.findByEmailAndEnabled(subscription.getEmail(), Boolean.TRUE).isPresent()){
@@ -51,6 +53,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     }
 
     @Override
+    @CacheEvict(value = "subscription", allEntries = true)
     public void cancelSubscription(String subscriptionId) {
         log.info("Searching subscription on database");
         Optional<Subscription> subscriptionOpt = subscriptionRepository.findById(subscriptionId);

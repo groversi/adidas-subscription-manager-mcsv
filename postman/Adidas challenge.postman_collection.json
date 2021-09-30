@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "d39eb117-c197-4add-900c-595f2ce60d53",
+		"name": "Adidas challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Subscription Manager",
+			"item": [
+				{
+					"name": "Create subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"gustavo.roversi@gmail.com\",\n    \"firstName\": \"Gustavo\",\n    \"gender\": \"Male\",\n    \"dateOfBirth\": \"1991-12-25\",\n    \"subscriptionConsent\": true,\n    \"campaignId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/adidas/v1/subscription",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adidas",
+								"v1",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get subscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/adidas/v1/subscription/615120c7ae67e43ec164ad14",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adidas",
+								"v1",
+								"subscription",
+								"615120c7ae67e43ec164ad14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/adidas/v1/subscription",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adidas",
+								"v1",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJzdWJzY3JpcHRpb25HYXRld2F5ODJkNjlkNWYtYWZiOS00ODNhLThlYTItNDlkY2U0YmFjYTg5IiwiaXNzIjoic3Vic2NyaXB0aW9uR2F0ZXdheSIsImlhdCI6MTYzMjg4NzQxNiwibmJmIjoxNjMyODg3NDE2LCJleHAiOjE2MzI4ODc0NDZ9.omKTcX2AYfR0s72gfBFQB1ypr_Lu1SCZCzKhRPMxCty9n2sJA53O94LAxfTB8O5PMuP4gcqECukmagGFACMJ5BIBy1VqDCHtsv7rbBxGvdBCi0UeF1s_sld9wwxneZvv_Z7zDW95xgK0JRF-7uST-p_Ra84WoarTEK6Vt94ttgVSMK5ppQfJ6eVvs_-n__TnSFXTE0i8qsKf1cPqnenZlgyaFopPwTVucZZS-Fd22hsc4SBwJ0GPjfUEO2rbx60VNCVRsuEl3JxBCXaeU4WVUNnPWPuYJmliWhvuwd3bZovTlYBM5SBPiClGPy3p8-9IGXYpIGGMQoD962XsAGB1IQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/adidas/api/v1/subscription/615268b548e8b9772e6b74fa",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"adidas",
+								"api",
+								"v1",
+								"subscription",
+								"615268b548e8b9772e6b74fa"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Subscription Gateway",
+			"item": [
+				{
+					"name": "Create subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJzdWJzY3JpcHRpb25HYXRld2F5MDkzMmM3ZjUtZTdmNy00MjkyLWEwMDItZWViMTVkOTU1ZjFlIiwiaXNzIjoic3Vic2NyaXB0aW9uR2F0ZXdheSIsImlhdCI6MTYzMjg5MDk1MiwibmJmIjoxNjMyODkwOTUyLCJleHAiOjE2MzI4OTA5ODJ9.WYUQ5p1dYvVXCYDaJjU0ZWzRzRhTCpqcFbWlKasgxuHtZq0-LyZoUoQVhBdoXXqMRm6QKeNzyVray5R-2Pv1rb613d6tFtZtqoAUWkxasHvbp9SmLOHqpkhICfsqMdFp75EV_KrSBAquSYlimDGGwlQBnWVoAmq7-sC2Y7pOhGY73CQFcR4EvRd-_qZO1D9s6wjRqgG4LBRTpXpC38mXUJa7pKqrrKfMZRGsXVvIJrnxdXGinMD2nS-KClEvoSzVMbdvfHjiDQ1TVJ4Qz-riGh_aMCvA-WC8YXKGIfMBkXeUzCjrCPGCC96BcJsGmprJSIrjWjggNHKVMi9p8trQQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jose.abearaaiael@microsoft.com\",\n    \"firstName\": \"Jose\",\n    \"gender\": \"\",\n    \"dateOfBirth\": \"1991-12-26\",\n    \"subscriptionConsent\": true,\n    \"campaignId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/adidas/api/v1/subscription",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"adidas",
+								"api",
+								"v1",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get subscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/adidas/api/v1/subscription/615132df2d942c531dcae873",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"adidas",
+								"api",
+								"v1",
+								"subscription",
+								"615132df2d942c531dcae873"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all subscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJzdWJzY3JpcHRpb25HYXRld2F5MTdhYjc4MzItMjMzMS00NWQwLWEzYzItNTViZGJjNjg2YzQ5IiwiaXNzIjoic3Vic2NyaXB0aW9uR2F0ZXdheSIsImlhdCI6MTYzMjg5MzI2MiwibmJmIjoxNjMyODkzMjYyLCJleHAiOjE2MzI4OTMyOTJ9.mv9DcTpk1Ei_98Omzyhf6ziRcWPngSBM8d2tH7K_LyILDBkLQZ_H_7eERe0OLkmk2FalKA-sGMNJ2RlZ5Lr67TN1wejOVz_54WkB1DMSCgzrij6xJHO4cXh7rTpVuOpOLz5s-cB9HIQNIrOmW6JPrWZ7_7Yc7URuxd13Ci9MO-etHHCzWQVj8vzLMeaAp9s_iQop-egWRUpqi2LBK8zXE0A0W2tRbzocIFpX-63Nd3BlG0edJne8620tUhYh5ywwlk20c5GVhBipk2S75YQku-mq36aRV1oBros28rYR1F_fpyPxQ9P9-VMtUh3elshMnNMxdUBdPgKBUojaWkm5LA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/adidas/api/v1/subscription",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"adidas",
+								"api",
+								"v1",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate jwt token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jose.abrel@gmail.com\",\n    \"firstName\": \"Jose\",\n    \"gender\": \"\",\n    \"dateOfBirth\": \"1991-12-26\",\n    \"subscriptionConsent\": true,\n    \"campaignId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/adidas/api/v1/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"adidas",
+								"api",
+								"v1",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Subscirption Email Server",
+			"item": [
+				{
+					"name": "Create subscription email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscriptionId\": \"6153ea2744fd2823e75bc96c\",\n    \"enabled\": true,\n    \"email\": \"jose.abriel@microsoft.com\",\n    \"firstName\": \"Jose\",\n    \"gender\": \"NOT_DECLARED\",\n    \"dateOfBirth\": {\n        \"year\": 1991,\n        \"month\": 12,\n        \"day\": 26\n    },\n    \"subscriptionConsent\": true,\n    \"campaignId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/adidas/email/v1/subscription/create-subscription",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"adidas",
+								"email",
+								"v1",
+								"subscription",
+								"create-subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subscription email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscriptionId\": \"6153ea2744fd2823e75bc96c\",\n    \"enabled\": true,\n    \"email\": \"jose.abriel@microsoft.com\",\n    \"firstName\": \"Jose\",\n    \"gender\": \"NOT_DECLARED\",\n    \"dateOfBirth\": {\n        \"year\": 1991,\n        \"month\": 12,\n        \"day\": 26\n    },\n    \"subscriptionConsent\": true,\n    \"campaignId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/adidas/email/v1/subscription/cancel-subscription",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"adidas",
+								"email",
+								"v1",
+								"subscription",
+								"cancel-subscription"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
