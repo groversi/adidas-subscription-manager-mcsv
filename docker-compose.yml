@@ -1,0 +1,29 @@
+version: "2"
+services:
+
+  subscription:
+    container_name: adidas-subscription-management
+    restart: always
+    build:
+      context: ./
+    image: subscription:latest
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - 8089:8081
